@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.al.o2o.dao.UserShopMapDao">
+    <resultMap id="userShopResultMap" type="com.al.o2o.entity.UserShopMap">
+        <id column="user_shop_id" property="userShopId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="point" property="point"/>
+        <association property="user" javaType="com.al.o2o.entity.PersonInfo"
+                     column="user_id">
+            <id column="user_id" property="userId"/>
+            <result column="name" property="name"/>
+        </association>
+        <association property="shop" javaType="com.al.o2o.entity.Shop">
+            <id column="shop_id" property="shopId"/>
+            <result column="shop_name" property="shopName"/>
+        </association>
+    </resultMap>
+
+    <select id="queryUserShopMapList" resultMap="userShopResultMap" >
+        SELECT
+        usm.user_shop_id,
+        usm.create_time,
+        usm.point,
+        buyer.user_id,
+        buyer.name,
+        s.shop_id,
+        s.shop_name
+        FROM
+        tb_user_shop_map usm,
+        tb_person_info buyer,
+        tb_shop s
+        <where>
+            tb_user_shop_map.shop_id = s.shop_id
+            and
+            tb_user_shop_map.user_id = buyer.user_id
+            <if test="userShopCondition.user != null and userShopCondition.user.userId != null">
+                usm.user_id = #{userShopCondition.user.userId}
+            </if>
+            <if test="userShopCondition.shop != null and userShopCondition.shop.shopId != null">
+                and usm.shop_id = #{userShopCondition.user.userId}
+            </if>
+            <if test="userShopCondition.user != null and userShopCondition.userName != null">
+                and buyer.name like `%${userShopCondition.user.userName}%`
+            </if>
+            <if test="userShopCondition.shop != null and userShopCondition.shop.shopName != null">
+                and s.shop_name like `%${userShopCondition.shop.shopName}%`
+            </if>
+            <if test="userShopCondition.createTime != null">
+                and usm.create_time > #{userShopCondition.createTime}
+            </if>
+        </where>
+        ORDER BY usm.create_time
+        LIMIT #{pageIndex},#{pageSize}
+    </select>
+    <select id="queryUserShopCount" resultType="int" parameterType="com.al.o2o.entity.UserShopMap">
+        SELECT COUNT(1)
+        FROM
+        tb_user_shop_map usm,
+        tb_person_info buyer,
+        tb_shop s
+        <where>
+            tb_user_shop_map.shop_id = s.shop_id
+            and
+            tb_user_shop_map.user_id = buyer.user_id
+            <if test="userShopCondition.user != null and userShopCondition.user.userId != null">
+                usm.user_id = #{userShopCondition.user.userId}
+            </if>
+            <if test="userShopCondition.shop != null and userShopCondition.shop.shopId != null">
+                and usm.shop_id = #{userShopCondition.user.userId}
+            </if>
+            <if test="userShopCondition.user != null and userShopCondition.userName != null">
+                and buyer.name like `%${userShopCondition.user.userName}%`
+            </if>
+            <if test="userShopCondition.shop != null and userShopCondition.shop.shopName != null">
+                and s.shop_name like `%${userShopCondition.shop.shopName}%`
+            </if>
+            <if test="userShopCondition.createTime != null">
+                and usm.create_time > #{userShopCondition.createTime}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryUserShopMap" resultMap="userShopResultMap">
+        SELECT
+        usm.user_shop_id,
+        usm.create_time,
+        usm.point,
+        s.shop_id,
+        s.shop_name,
+        buyer.user_id,
+        buyer.name
+        FROM
+        tb_user_shop_map usm,
+        tb_shop s,
+        tb_person_info buyer
+        WHERE
+        usm.shop_id = s.shop_id
+        AND
+        usm.user_id = buyer.user_id
+        AND
+        usm.user_id = #{userShopCondition.user.userId}
+        AND
+        usm.shop_id = #{userShopCondition.shop.shopId}
+    </select>
+
+    <insert id="insertUserShopMap" useGeneratedKeys="true" keyColumn="user_shop_id"
+            keyProperty="userShopId" parameterType="com.al.o2o.entity.UserShopMap">
+        INSERT INTO
+        tb_user_shop_map(user_id, shop_id, create_time, point) VALUES
+                        (#{user.userId},#{shop.shopId},#{createTime},#{point})
+    </insert>
+    <update id="updateUserShopMapPoint" parameterType="com.al.o2o.entity.UserShopMap"
+            keyProperty="userShopId" useGeneratedKeys="true">
+        UPDATE tb_user_shop_map
+        <set>
+            <if test="point != null">point = #{point}</if>
+        </set>
+        WHERE
+        user_id = #{user.userId}
+        AND
+        shop_id = #{shop.shopId}
+    </update>
+</mapper>
