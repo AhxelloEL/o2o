@@ -17,7 +17,7 @@ import java.util.Date;
  * @author Xiahuicheng
  * @PackageName:com.al.o2o.quartz
  * @ClassName:HelloQuartz
- * @Description
+ * @Description Hello
  * @date2021/8/18 19:19
  */
 public class HelloQuartz implements Job {
