@@ -31,7 +31,7 @@ public class ShopAuthMapServiceImpl implements ShopAuthMapService {
     public ShopAuthMapExecution getShopAuthMapListByShopId(Long shopId, int pageIndex, int pageSize) {
         if (shopId != null && pageIndex > -1 && pageSize > -1) {
             int rowIndex = PageCalculator.calculateRowIndex(pageIndex, pageSize);
-            List<ShopAuthMap> shopAuthMapList = shopAuthMapDao.queryShopAuthMapByShopId(shopId, pageIndex, rowIndex);
+            List<ShopAuthMap> shopAuthMapList = shopAuthMapDao.queryShopAuthMapByShopId(shopId, rowIndex, pageSize);
             int count = shopAuthMapDao.queryShopAuthCountByShopId(shopId);
             ShopAuthMapExecution same = new ShopAuthMapExecution();
             same.setShopAuthMapList(shopAuthMapList);
@@ -55,9 +55,10 @@ public class ShopAuthMapServiceImpl implements ShopAuthMapService {
             shopAuthMap.setCreateTime(new Date());
             shopAuthMap.setLastEditTime(new Date());
             shopAuthMap.setEnableStatus(1);
+            shopAuthMap.setTitleFlag(0);
             try {
                 int effectNum = shopAuthMapDao.insertShopAuthMap(shopAuthMap);
-                if (effectNum < 0){
+                if (effectNum <= 0){
                     throw new ShopOperationException("添加授权失败");
                 }
                 return new ShopAuthMapExecution(ShopAuthMapStateEnum.SUCCESS);
