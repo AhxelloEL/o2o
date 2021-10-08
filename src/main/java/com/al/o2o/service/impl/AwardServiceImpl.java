@@ -44,7 +44,7 @@ public class AwardServiceImpl implements AwardService {
     }
 
     @Override
-    public Award getByAwardId(Long awardId) {
+    public Award getByAwardId(Long awardId)  {
         return awardDao.queryAwardByAwardId(awardId);
     }
 
