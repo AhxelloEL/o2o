@@ -1,5 +1,6 @@
 package com.al.o2o.cache;
 
+import com.al.o2o.entity.Area;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.BinaryClient.LIST_POSITION;
 import redis.clients.jedis.Jedis;
@@ -1387,6 +1388,8 @@ public class JedisUtil {
 		public String ltrim(String key, int start, int end) {
 			return ltrim(SafeEncoder.encode(key), start, end);
 		}
+
+
 	}
 
 }
