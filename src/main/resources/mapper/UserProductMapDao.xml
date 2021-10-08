@@ -54,7 +54,7 @@
             and
             upm.user_id = buyer.user_id
             and
-            upm.operator_id = operator.operator_id
+            upm.operator_id = operator.user_id
             <!-- 按顾客信息精确查询 -->
             <if test="userProductCondition.user != null and userProductCondition.user.userId != null">
                 and upm.user_id = #{userProductCondition.user.userId}
@@ -77,7 +77,7 @@
             </if>
         </where>
         ORDER BY upm.create_time DESC
-        LIMIT #{rowIndex},#{pageSize};
+        LIMIT #{pageIndex},#{pageSize};
     </select>
     
     <select id="queryUserProductCount" resultType="int" parameterType="com.al.o2o.entity.UserProductMap">
@@ -95,7 +95,7 @@
             and
             upm.user_id = buyer.user_id
             and
-            upm.operator_id = operator.operator_id
+            upm.operator_id = operator.user_id
             <!-- 按顾客信息精确查询 -->
             <if test="userProductCondition.user != null and userProductCondition.user.userId != null">
                 and upm.user_id = #{userProductCondition.user.userId}

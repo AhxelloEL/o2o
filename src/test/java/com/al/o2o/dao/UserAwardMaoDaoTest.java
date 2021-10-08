@@ -4,6 +4,7 @@ import com.al.o2o.entity.Award;
 import com.al.o2o.entity.PersonInfo;
 import com.al.o2o.entity.Shop;
 import com.al.o2o.entity.UserAwardMap;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,7 @@ public class UserAwardMaoDaoTest {
     Shop shop = new Shop();
     Award award = new Award();
     @Test
+    @Ignore
     public void testAUserAwardList(){
         user.setName("测");
         userAwardMap.setUser(user);
@@ -45,15 +47,17 @@ public class UserAwardMaoDaoTest {
     }
 
     @Test
+    @Ignore
     public void testBUserAwardById(){
-        userAwardMap.setUserAwardId(1l);
+        userAwardMap.setUserAwardId(9l);
         UserAwardMap effectNum = userAwardMapDao.queryUserAwardMapById(userAwardMap.getUserAwardId());
         System.out.println(effectNum.getAward().getAwardName());
     }
 
     @Test
+    @Ignore
     public void testCUserAwardInsert(){
-        award.setAwardId(20l);
+        award.setAwardId(25l);
         shop.setShopId(29l);
         user.setUserId(1l);
         userAwardMap.setUser(user);
@@ -68,6 +72,7 @@ public class UserAwardMaoDaoTest {
     }
 
     @Test
+    @Ignore
     public void testDUserAwardUpdate() throws  Exception{
         // 按用户名模糊查询
         user.setName("测试");

@@ -3,6 +3,7 @@ package com.al.o2o.dao;
 
 
 import com.al.o2o.entity.Area;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class AreaDaoTest  {
      * 测试areaDao
      */
     @Test
+    @Ignore
     public void test1(){
        List<Area> optionalArea = areaDao.queryArea();
         assertEquals(2,optionalArea.size());
