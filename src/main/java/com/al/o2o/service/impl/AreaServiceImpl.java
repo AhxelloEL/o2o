@@ -50,7 +50,7 @@ public class AreaServiceImpl implements AreaService {
         if (!jedisKeys.exists(key)){
             //如果为空，则先从数据库中取出数据
             areaList = areaDao.queryArea();
-           String jsonString;
+            String jsonString;
             try {
                 //将取出的数据转换成String
                 jsonString = mapper.writeValueAsString(areaList);
