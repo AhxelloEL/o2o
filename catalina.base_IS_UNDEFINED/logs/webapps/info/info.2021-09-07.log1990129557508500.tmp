@@ -1,0 +1,7 @@
+2021-09-10 00:00:13.934 [main] INFO  com.al.o2o.O2oApplication - Started O2oApplication in 15.223 seconds (JVM running for 18.211)
+2021-09-07 16:47:46.036 [main] INFO  com.al.o2o.O2oApplication - Starting O2oApplication on DESKTOP-2JHV5BG with PID 22012 (D:\al_springboot\springboot_o2o\target\classes started by yunSun in D:\al_springboot\springboot_o2o)
+2021-09-07 16:47:46.039 [main] INFO  com.al.o2o.O2oApplication - No active profile set, falling back to default profiles: default
+2021-09-07 16:47:49.474 [main] INFO  com.al.o2o.O2oApplication - Started O2oApplication in 3.859 seconds (JVM running for 5.0)
+2021-09-07 23:59:09.660 [main] INFO  com.al.o2o.O2oApplication - Starting O2oApplication on DESKTOP-2JHV5BG with PID 18968 (D:\al_springboot\springboot_o2o\target\classes started by yunSun in D:\al_springboot\springboot_o2o)
+2021-09-07 23:59:09.662 [main] INFO  com.al.o2o.O2oApplication - No active profile set, falling back to default profiles: default
+2021-09-07 23:59:13.164 [main] INFO  com.al.o2o.O2oApplication - Started O2oApplication in 3.827 seconds (JVM running for 5.065)
