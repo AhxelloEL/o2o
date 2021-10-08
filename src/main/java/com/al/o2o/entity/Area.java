@@ -1,5 +1,6 @@
 package com.al.o2o.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Date;
  * @Description 区域实体类(使用引用类型不要默认值null，如果用普通类型会为其赋上空值)
  * @date2021/6/2 9:21
  */
-public class Area {
+public class Area implements Serializable {
     /**
      *区域ID
      */
@@ -69,5 +70,19 @@ public class Area {
 
     public void setLastEditTime(Date lastEditTime) {
         this.lastEditTime = lastEditTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Area{" +
+                "areaId=" + areaId +
+                ", areaName='" + areaName + '\'' +
+                ", priority=" + priority +
+                ", createTime=" + createTime +
+                ", lastEditTime=" + lastEditTime +
+                '}';
+    }
+
+    public Area() {
     }
 }
