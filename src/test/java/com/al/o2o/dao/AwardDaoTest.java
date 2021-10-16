@@ -29,6 +29,7 @@ import static org.junit.Assert.assertEquals;
 public class AwardDaoTest {
     @Resource
     private AwardDao awardDao;
+
     @Test
     @Ignore
     public void testAInsertAwawrd(){
@@ -42,19 +43,18 @@ public class AwardDaoTest {
         award.setPriority(5);
         award.setCreateTime(new Date());
         award.setEnableStatus(1);
-        award.setShop(shop);
+        award.setShopId(shop.getShopId());
         int effectNum = awardDao.insertAward(award);
         assertEquals(1,effectNum);
     }
 
     @Test
-    @Ignore
     public void testBQueryAwardList(){
         Shop shopCondition = new Shop();
         Award awardCondition = new Award();
         //shopCondition.setShopId(28l);
         //awardCondition.setShop(shopCondition);
-        awardCondition.setAwardName("美心");
+        awardCondition.setAwardName("MacBook");
         List<Award> awardList = awardDao.queryAwardList(awardCondition,0,3);
         int count = awardDao.queryAwardCount(awardCondition);
         System.out.println("奖品列表的大小：" + awardList.size());
@@ -62,11 +62,9 @@ public class AwardDaoTest {
     }
 
     @Test
-    @Ignore
     public void testCQueryAwardByAwardId(){
         Long awardId = 25l;
         Award effectNum = awardDao.queryAwardByAwardId(awardId);
-        System.out.println(effectNum.getShop().getShopName());
         assertEquals("美心流心月饼",effectNum.getAwardName());
     }
 
@@ -75,7 +73,8 @@ public class AwardDaoTest {
     public void testDUpdateAward(){
         Award award = new Award();
         award.setAwardId(25l);
-        award.setPoint(98);
+        award.setShopId(28l);
+        award.setPoint(6);
         award.setLastEditTime(new Date());
         int effectNum = awardDao.updateAward(award);
         assertEquals(1,effectNum);
@@ -86,11 +85,13 @@ public class AwardDaoTest {
     public void testEDeleteAward(){
         Award awardCondition = new Award();
         awardCondition.setAwardName("美心流心月饼");
+        awardCondition.setShopId(28l);
+        awardCondition.setAwardId(25l);
         // 查询出所有测试奖品并删除
         List<Award> awardList = awardDao.queryAwardList(awardCondition, 0, 2);
         assertEquals(1, awardList.size());
         for (Award award : awardList) {
-            int effectedNum = awardDao.deleteAward(award.getAwardId(), award.getShop().getShopId());
+            int effectedNum = awardDao.deleteAward(award.getAwardId(), award.getShopId());
             assertEquals(1, effectedNum);
         }
     }
