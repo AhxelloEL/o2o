@@ -30,6 +30,7 @@ public class AwardDaoTest {
     @Resource
     private AwardDao awardDao;
     @Test
+    @Ignore
     public void testAInsertAwawrd(){
         Shop shop = new Shop();
         Award award = new Award();
@@ -47,6 +48,7 @@ public class AwardDaoTest {
     }
 
     @Test
+    @Ignore
     public void testBQueryAwardList(){
         Shop shopCondition = new Shop();
         Award awardCondition = new Award();
@@ -60,16 +62,19 @@ public class AwardDaoTest {
     }
 
     @Test
+    @Ignore
     public void testCQueryAwardByAwardId(){
-        Long awardId = 19l;
+        Long awardId = 25l;
         Award effectNum = awardDao.queryAwardByAwardId(awardId);
+        System.out.println(effectNum.getShop().getShopName());
         assertEquals("美心流心月饼",effectNum.getAwardName());
     }
 
     @Test
+    @Ignore
     public void testDUpdateAward(){
         Award award = new Award();
-        award.setAwardId(19l);
+        award.setAwardId(25l);
         award.setPoint(98);
         award.setLastEditTime(new Date());
         int effectNum = awardDao.updateAward(award);
@@ -77,6 +82,7 @@ public class AwardDaoTest {
     }
 
     @Test
+    @Ignore
     public void testEDeleteAward(){
         Award awardCondition = new Award();
         awardCondition.setAwardName("美心流心月饼");

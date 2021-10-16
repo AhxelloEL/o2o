@@ -41,4 +41,35 @@ public class ShopAdminController {
         return "shop/productoperation";
     }
 
+    @RequestMapping(value = "/shopauthmanagement")
+    public String shopAuthManagement() {
+        // 转发至店铺授权页面
+        return "shop/shopauthmanagement";
+    }
+
+    @RequestMapping(value = "/shopauthedit")
+    public String shopAuthEdit() {
+        // 转发至授权信息修改页面
+        return "shop/shopauthedit";
+    }
+    @RequestMapping(value = "/operationsuccess", method = RequestMethod.GET)
+    private String operationSuccess() {
+        // 转发至操作失败的页面
+        return "shop/operationsuccess";
+    }
+
+    @RequestMapping(value = "/operationfail", method = RequestMethod.GET)
+    private String operationFail() {
+        // 转发至操作成功的页面
+        return "shop/operationfail";
+    }
+
+    @RequestMapping(value = "/productbuycheck", method = RequestMethod.GET)
+    private String productBuyCheck() {
+        // 转发至店铺的消费记录的页面
+        return "shop/productbuycheck";
+    }
+
+
+
 }

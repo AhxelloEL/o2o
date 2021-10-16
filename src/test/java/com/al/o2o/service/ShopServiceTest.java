@@ -63,6 +63,7 @@ public class ShopServiceTest  {
      * @throws FileNotFoundException
      */
     @Test
+    @Ignore
     public void test3() throws FileNotFoundException ,FileNotFoundException{
         Shop shop = new Shop();
         shop.setShopId(63L);

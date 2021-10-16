@@ -107,6 +107,7 @@ public class ShopDaoTest  {
 
 
     @Test
+    @Ignore
     public void testQueryShopList(){
         Shop shopCondition = new Shop();
         ShopCategory childCategory = new ShopCategory();

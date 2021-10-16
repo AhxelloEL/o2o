@@ -1,6 +1,3 @@
-2021-08-15 00:03:40.232 [main] ERROR com.al.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
-2021-08-15 00:08:51.236 [main] ERROR com.al.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
-2021-08-15 00:09:26.281 [main] ERROR com.al.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
-2021-08-15 00:13:04.358 [main] ERROR com.al.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
-2021-08-15 00:17:23.460 [main] ERROR com.al.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
-2021-08-15 09:25:22.591 [main] ERROR com.al.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2021-09-12 13:11:39.187 [http-nio-8081-exec-1] ERROR com.al.o2o.web.superadmin.AreaController - test error!
+2021-09-12 13:11:57.625 [http-nio-8081-exec-3] ERROR com.al.o2o.web.superadmin.AreaController - test error!
+2021-09-12 13:12:05.811 [http-nio-8081-exec-4] ERROR com.al.o2o.web.superadmin.AreaController - test error!

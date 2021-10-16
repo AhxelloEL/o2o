@@ -1,6 +1,7 @@
 package com.al.o2o.service;
 
 import com.al.o2o.entity.Award;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,9 @@ public class AwardServiceTest {
     private AwardService awardService;
 
     @Test
+    @Ignore
     public void testAGetAwardById(){
-        long awardId = 20l;
+        long awardId = 25l;
         Award awardCondition = awardService.getByAwardId(awardId);
         System.out.println(awardCondition.getAwardName());
     }

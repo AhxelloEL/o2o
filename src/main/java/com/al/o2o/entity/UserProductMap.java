@@ -15,7 +15,6 @@ public class UserProductMap {
     private Integer point;
     private Shop shop;
     private Product product;
-    private Award award;
     private PersonInfo user;
     private PersonInfo operator;
 
@@ -51,13 +50,6 @@ public class UserProductMap {
         this.shop = shop;
     }
 
-    public Award getAward() {
-        return award;
-    }
-
-    public void setAward(Award award) {
-        this.award = award;
-    }
 
     public PersonInfo getUser() {
         return user;

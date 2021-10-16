@@ -1,0 +1,6 @@
+2021-09-09 00:00:00.139 [schedulerFactory_Worker-1] DEBUG c.a.o.d.ProductSellDailyDao.insertProductSellDaily - ==>  Preparing: INSERT INTO tb_product_sell_daily(product_id,shop_id,create_time,total) ( SELECT p.product_id,p.shop_id,date_sub(curdate(),interval 1 day),0 AS total FROM tb_product p WHERE p.product_id not in (select product_id from tb_product_sell_daily where date_format(create_time,'%Y-%m-%d') = date_sub(curdate(),interval 1 day)) ) 
+2021-09-09 00:00:00.168 [schedulerFactory_Worker-1] DEBUG c.a.o.d.ProductSellDailyDao.insertProductSellDaily - ==> Parameters: 
+2021-09-09 00:00:00.405 [schedulerFactory_Worker-1] DEBUG c.a.o.d.ProductSellDailyDao.insertProductSellDaily - <==    Updates: 22
+2021-09-09 23:59:58.984 [main] DEBUG com.al.o2o.O2oApplication - Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2021-09-07 16:47:46.038 [main] DEBUG com.al.o2o.O2oApplication - Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2021-09-07 23:59:09.662 [main] DEBUG com.al.o2o.O2oApplication - Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE

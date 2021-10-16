@@ -20,7 +20,7 @@ public interface ShopAuthMapDao {
      * @param pageSize  返回多少行数据
      * @return 返回店铺授权信息
      */
-    List<ShopAuthMap> queryShopAuthMapByShopId(@Param("shopId")Long shopId,@Param("pageIndex")int pageIndex,
+    List<ShopAuthMap> queryShopAuthMapByShopId(@Param("shopId")long shopId,@Param("pageIndex")int pageIndex,
                                                @Param("pageSize")int pageSize);
 
     /**
@@ -28,7 +28,7 @@ public interface ShopAuthMapDao {
      * @param shopId 店铺ID
      * @return 店铺授权数量
      */
-    int queryShopAuthCountByShopId(@Param("shopId")Long shopId);
+    int queryShopAuthCountByShopId(@Param("shopId")long shopId);
 
     /**
      * 授权

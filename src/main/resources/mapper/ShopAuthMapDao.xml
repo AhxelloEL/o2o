@@ -42,14 +42,13 @@
             AND
             sam.shop_id = s.shop_id
             AND
-            sam.shop_id = #{shop.shopId}
+            sam.shop_id = #{shopId}
         LIMIT #{pageIndex},#{pageSize}
     </select>
 
     <select id="queryShopAuthCountByShopId" resultType="int">
         SELECT COUNT(1)
         FROM
-         FROM
         tb_shop_auth_map sam,
         tb_person_info buyer,
         tb_shop s
@@ -58,7 +57,7 @@
             AND
             sam.shop_id = s.shop_id
             AND
-            sam.shop_id = #{shop.shopId}
+            sam.shop_id = #{shopId}
     </select>
 
     <select id="queryShopAuthMapById" resultMap="shopAuthResultMap">

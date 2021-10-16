@@ -1,0 +1,9 @@
+2021-09-08 00:00:00.014 [schedulerFactory_Worker-1] INFO  c.al.o2o.service.impl.ProductSellDailyServiceImpl - Quarz Runing !!!Wed Sep 08 00:00:00 CST 2021
+2021-09-06 23:59:26.111 [main] INFO  com.al.o2o.O2oApplication - Starting O2oApplication on DESKTOP-2JHV5BG with PID 12888 (D:\al_springboot\springboot_o2o\target\classes started by yunSun in D:\al_springboot\springboot_o2o)
+2021-09-06 23:59:26.115 [main] INFO  com.al.o2o.O2oApplication - No active profile set, falling back to default profiles: default
+2021-09-06 23:59:30.807 [main] INFO  com.al.o2o.O2oApplication - Started O2oApplication in 5.012 seconds (JVM running for 5.926)
+2021-09-07 00:00:00.013 [schedulerFactory_Worker-1] INFO  c.al.o2o.service.impl.ProductSellDailyServiceImpl - Quarz Runing !!!Tue Sep 07 00:00:00 CST 2021
+2021-09-06 23:59:26.753 [main] INFO  com.al.o2o.O2oApplication - Starting O2oApplication on DESKTOP-2JHV5BG with PID 11880 (D:\al_springboot\springboot_o2o\target\classes started by yunSun in D:\al_springboot\springboot_o2o)
+2021-09-06 23:59:26.758 [main] INFO  com.al.o2o.O2oApplication - No active profile set, falling back to default profiles: default
+2021-09-06 23:59:30.308 [main] INFO  com.al.o2o.O2oApplication - Started O2oApplication in 3.873 seconds (JVM running for 5.077)
+2021-09-07 00:00:00.020 [schedulerFactory_Worker-1] INFO  c.al.o2o.service.impl.ProductSellDailyServiceImpl - Quarz Runing !!!Tue Sep 07 00:00:00 CST 2021
