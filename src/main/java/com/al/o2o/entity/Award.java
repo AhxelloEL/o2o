@@ -47,9 +47,9 @@ public class Award {
      */
     private Integer enableStatus;
     /**
-     * 关联外键SHOP_ID
+     * SHOP_ID
      */
-    private Shop shop;
+    private Long shopId;
 
     //-------------------------------GET/SET------------------------------
 
@@ -117,12 +117,12 @@ public class Award {
         this.lastEditTime = lastEditTime;
     }
 
-    public Shop getShop() {
-        return shop;
+    public Long getShopId() {
+        return shopId;
     }
 
-    public void setShop(Shop shop) {
-        this.shop = shop;
+    public void setShopId(Long shopId) {
+        this.shopId = shopId;
     }
 
     public Integer getEnableStatus() {
