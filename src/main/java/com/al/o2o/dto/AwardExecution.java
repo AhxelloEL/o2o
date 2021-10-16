@@ -1,6 +1,8 @@
 package com.al.o2o.dto;
 
 import com.al.o2o.entity.Award;
+import com.al.o2o.entity.UserAwardMap;
+import com.al.o2o.enums.AreaStateEnum;
 import com.al.o2o.enums.AwardStateEnum;
 
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.List;
  * @author Xiahuicheng
  * @PackageName:com.al.o2o.dto
  * @ClassName:AwardExecution
- * @Description
+ * @Description 奖品实体类增强
  * @date2021/8/20 13:58
  */
 public class AwardExecution {
@@ -33,6 +35,7 @@ public class AwardExecution {
      * 查询
      */
     private List<Award> awardList;
+
 
     //-----------------------------------GET/SET--------------------------------
 
@@ -81,6 +84,7 @@ public class AwardExecution {
 
     /**
      * 失败时调用的构造器
+     *
      * @param stateEnum
      */
     public AwardExecution(AwardStateEnum stateEnum) {
@@ -90,10 +94,11 @@ public class AwardExecution {
 
     /**
      * 操作增删改成功时调用的构造器
+     *
      * @param stateEnum
      * @param award
      */
-    public AwardExecution(AwardStateEnum stateEnum, Award award){
+    public AwardExecution(AwardStateEnum stateEnum, Award award) {
         this.state = stateEnum.getState();
         this.stateInfo = stateEnum.getStateInfo();
         this.award = award;
@@ -101,10 +106,11 @@ public class AwardExecution {
 
     /**
      * 列表查询成功时调用的构造器
+     *
      * @param stateEnum
      * @param awardList
      */
-    public AwardExecution(AwardStateEnum stateEnum,List<Award> awardList){
+    public AwardExecution(AwardStateEnum stateEnum, List<Award> awardList) {
         this.state = stateEnum.getState();
         this.stateInfo = stateEnum.getStateInfo();
         this.awardList = awardList;
