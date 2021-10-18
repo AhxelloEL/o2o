@@ -32,7 +32,7 @@ public class AwardServiceImpl implements AwardService {
     private AwardDao awardDao;
 
     @Override
-    public AwardExecution getAwawrdList(Award awardCondition, int pageIndex, int pageSize) {
+    public AwardExecution getAwardList(Award awardCondition, int pageIndex, int pageSize) {
         int rowIndex = PageCalculator.calculateRowIndex(pageIndex, pageSize);
         //分页查询
         List<Award> awardList = awardDao.queryAwardList(awardCondition, rowIndex, pageSize);
