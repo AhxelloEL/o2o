@@ -19,7 +19,7 @@ public interface AwardService {
      * @param pageSize 返回的行数
      * @return 返回总数
      */
-     AwardExecution getAwawrdList(Award awardCondition,int pageIndex,int pageSize);
+     AwardExecution getAwardList(Award awardCondition,int pageIndex,int pageSize);
 
     /**
      * 查询奖品信息
