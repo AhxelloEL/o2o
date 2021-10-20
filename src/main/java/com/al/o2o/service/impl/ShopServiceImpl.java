@@ -11,40 +11,52 @@ import com.al.o2o.util.ImageUtil;
 import com.al.o2o.util.PageCalculator;
 import com.al.o2o.util.PathUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * @author Xiahuicheng
+ * @PackageName:com.al.o2o.service.impl
+ * @ClassName:ShopServiceImpl
+ * @Description 商品业务接口实现类
+ * @d ate2021/
+ */
+
 @Service
 public class ShopServiceImpl implements ShopService {
-    @Autowired
+    @Resource
     private ShopDao shopDao;
 
+
     /**
-     * dao层只认识行数row service只认页数 page 因此在service
-     * 要做一个转换
-     * @param shopCondition
-     * @param pageIndex 从第几行开始查询
-     * @param pageSize 返回的行数
+     * 店铺列表分页查询
+     * dao层只认识行数row service只认页数 page 因此在service要做一个转换
+     *
+     * @param shopCondition 店铺信息
+     * @param pageIndex     从第几行开始查询
+     * @param pageSize      返回的行数
      * @return
      */
     @Override
     public ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize) {
         //rowIndex转化
-        int rowIndex = PageCalculator.calculateRowIndex(pageIndex,pageSize);
+        int rowIndex = PageCalculator.calculateRowIndex(pageIndex, pageSize);
         //分页查询
-        List<Shop> shopList = shopDao.queryShopList(shopCondition,rowIndex,pageSize);
+        List<Shop> shopList = shopDao.queryShopList(shopCondition, rowIndex, pageSize);
         //查询总数量
         int count = shopDao.queryShopCount(shopCondition);
         //返回状态标识
         ShopExecution se = new ShopExecution();
         //非空判断
-        if (shopList != null){
+        if (shopList != null) {
             se.setShopList(shopList);
             se.setCount(count);
-        }else {
+        } else {
             se.setState(ShopStateEnum.INNER_ERROR.getState());
         }
         //返回结果
@@ -53,6 +65,7 @@ public class ShopServiceImpl implements ShopService {
 
     /**
      * 店铺查询
+     *
      * @param shopId
      * @return
      */
@@ -63,13 +76,14 @@ public class ShopServiceImpl implements ShopService {
 
     /**
      * 更新店铺信息
-     * @param shop
-     * @param thumbnail
+     *
+     * @param shop 店铺名
+     * @param thumbnail 图片
      * @return
      * @throws ShopOperationException
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = ShopOperationException.class)
     public ShopExecution modifyShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException {
         if (shop == null || shop.getShopId() == null) {
             return new ShopExecution(ShopStateEnum.NULL_SHOP);
@@ -101,20 +115,21 @@ public class ShopServiceImpl implements ShopService {
 
     /**
      * 店铺注册
-     * @param shop
-     * @param thumbnail
+     *
+     * @param shop 店铺信息
+     * @param thumbnail 店铺缩略图
      * @return
      * @throws ShopOperationException
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = ShopOperationException.class)
     public ShopExecution addShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException {
         // 空值判断
-        if (shop == null) {
+        if (shop == null && shop.getShopName() != null && !"".equals(shop.getShopName())) {
             return new ShopExecution(ShopStateEnum.NULL_SHOP);
         }
         try {
-            // 给店铺信息赋初始值
+            // 给店铺信息赋初始值,0代表未审核
             shop.setEnableStatus(0);
             shop.setCreateTime(new Date());
             shop.setLastEditTime(new Date());
@@ -146,6 +161,7 @@ public class ShopServiceImpl implements ShopService {
 
     /**
      * 添加店铺图片
+     *
      * @param shop
      * @param thumbnail
      */

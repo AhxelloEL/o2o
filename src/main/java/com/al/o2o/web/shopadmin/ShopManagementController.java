@@ -22,14 +22,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
-
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * @author Xiahuicheng
+ * @PackageName:com.al.o2o.web.shopadmin
+ * @ClassName:ShopManagementController
+ * @Description 店铺管理
+ * @date2021/10/10 14:12
+ */
 @Controller
 @RequestMapping("/shopadmin")
 public class ShopManagementController {
@@ -39,6 +44,7 @@ public class ShopManagementController {
     private ShopCategoryService shopCategoryService;
     @Autowired
     private AreaService areaService;
+
 
 
     @RequestMapping(value = "/getshopmanagementinfo", method = RequestMethod.GET)
@@ -70,7 +76,8 @@ public class ShopManagementController {
     }
 
     /**
-     * 分页查询
+     * 分页查询店铺列表
+     *
      * @param request
      * @return
      */
@@ -169,7 +176,7 @@ public class ShopManagementController {
 
 
     /**
-     * 店铺查询
+     * 查询店铺详情信息
      *
      * @param request
      * @return
@@ -228,7 +235,7 @@ public class ShopManagementController {
 
 
     /**
-     * 注册店铺
+     * 新增店铺
      *
      * @param request
      * @return
@@ -247,6 +254,7 @@ public class ShopManagementController {
         ObjectMapper mapper = new ObjectMapper();
         Shop shop = null;
         try {
+            //将String类型转化成shop实体类
             shop = mapper.readValue(shopStr, Shop.class);
         } catch (Exception e) {
             modelMap.put("success", false);
