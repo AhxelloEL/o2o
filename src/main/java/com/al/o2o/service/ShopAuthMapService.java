@@ -23,12 +23,7 @@ public interface ShopAuthMapService {
      */
     ShopAuthMapExecution getShopAuthMapListByShopId(Long shopId, int pageIndex, int pageSize);
 
-    /**
-     * 查询授权总数量
-     * @param shopAuthCondition 店铺授权信息
-     * @return 总数量
-     */
-    //ShopAuthMapExecution getShopAuthCountByShopId(ShopAuthMap shopAuthCondition);
+
 
     /**
      * 根据shopAuthId返回对应的授权信息

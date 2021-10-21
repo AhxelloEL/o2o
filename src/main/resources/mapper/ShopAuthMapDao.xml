@@ -38,11 +38,11 @@
         tb_person_info buyer,
         tb_shop s
         WHERE
-            sam.employee_id = buyer.user_id
-            AND
-            sam.shop_id = s.shop_id
-            AND
-            sam.shop_id = #{shopId}
+        sam.employee_id = buyer.user_id
+        AND
+        sam.shop_id = s.shop_id
+        AND
+        sam.shop_id = #{shopId}
         LIMIT #{pageIndex},#{pageSize}
     </select>
 
