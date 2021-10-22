@@ -14,6 +14,7 @@ import java.util.List;
  */
 public interface UserShopMapDao {
     /**
+     * 根据条件查询顾客店铺积分
      *
      * @param userShopCondition
      * @param pageIndex
@@ -21,24 +22,27 @@ public interface UserShopMapDao {
      * @return
      */
     List<UserShopMap> queryUserShopMapList(@Param("userShopCondition") UserShopMap userShopCondition,
-                                           @Param("pageIndex")int pageIndex, @Param("pageSize")int pageSize);
+                                           @Param("pageIndex") int pageIndex, @Param("pageSize") int pageSize);
 
     /**
+     * 查询用户在该店铺的积分总数
      *
      * @param userShopCondition
      * @return
      */
-    int queryUserShopCount(@Param("userShopCondition")UserShopMap userShopCondition);
+    int queryUserShopCount(@Param("userShopCondition") UserShopMap userShopCondition);
 
     /**
      * 根据传入的用户Id和店铺Id查询该用户在某个店铺下的积分信息
+     *
      * @param userId 用户ID
      * @param shopId 店铺ID
      * @return 积分信息
      */
-    UserShopMap queryUserShopMap(Long userId,Long shopId);
+    UserShopMap queryUserShopMap(@Param("userId") long userId, @Param("shopId") long shopId);
 
     /**
+     * 新增
      *
      * @param userShopMap
      * @return
@@ -46,6 +50,7 @@ public interface UserShopMapDao {
     int insertUserShopMap(UserShopMap userShopMap);
 
     /**
+     * 更新
      *
      * @param userShopMap
      * @return
