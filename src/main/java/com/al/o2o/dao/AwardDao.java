@@ -61,7 +61,7 @@ public interface AwardDao {
      * 删除奖品信息
      *
      * @param awardId 奖品Id
-     * @param shopId 店铺Id
+     * @param shopId  店铺Id
      * @return 返回结果 1：成功 0：失败
      */
     int deleteAward(@Param("awardId") long awardId, @Param("shopId") long shopId);
