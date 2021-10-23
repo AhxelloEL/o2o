@@ -2,6 +2,12 @@ package com.al.o2o.entity;
 
 import java.util.Date;
 
+/**
+ * @author Xiahuicheng
+ * @PackageName:com.al.o2o.entity
+ * @ClassName:ProductImg
+ * @Description 商品详情图片实体类
+ */
 public class ProductImg {
     /**
      * 商品图片ID
