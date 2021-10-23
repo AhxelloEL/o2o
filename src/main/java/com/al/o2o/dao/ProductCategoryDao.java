@@ -9,7 +9,7 @@ import java.util.List;
  * @author Xiahuicheng
  * @PackageName:com.al.o2o.dao
  * @InterfaceName:ProductCategory
- * @Description
+ * @Description 商品类型Dao接口
  * @date2021/5/16 19:50
  */
 public interface ProductCategoryDao {
