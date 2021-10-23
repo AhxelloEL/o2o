@@ -3,8 +3,11 @@ package com.al.o2o.entity;
 import java.util.Date;
 
 /**
- * @author XiaHuicheng
- * 头条实体类
+ * @author Xiahuicheng
+ * @PackageName:com.al.o2o.entity
+ * @ClassName:HeadLine
+ * @Description 头条实体类
+ * @date2021/6/2 9:21
  */
 public class HeadLine {
     /**
