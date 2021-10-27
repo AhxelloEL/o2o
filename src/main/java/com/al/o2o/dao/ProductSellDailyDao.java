@@ -19,11 +19,11 @@ public interface ProductSellDailyDao {
      *
      * @param productSellDailyCondition
      * @param beginTime
-     * @param editTime
+     * @param endTime
      * @return
      */
     List<ProductSellDaily> productSellDailyList(@Param("productSellDailyCondition") ProductSellDaily productSellDailyCondition,
-                                                @Param("beginTime") Date beginTime, @Param("editTime") Date editTime);
+                                                @Param("beginTime") Date beginTime, @Param("endTime") Date endTime);
 
     /**
      * 统计平台所以商品的日销售量
