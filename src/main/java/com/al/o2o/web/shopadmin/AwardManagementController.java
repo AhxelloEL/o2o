@@ -57,7 +57,7 @@ public class AwardManagementController {
             // 拼接查询条件
             Award awardCondition = compactAwardCondition4Search(currentShop.getShopId(), awardName);
             // 根据查询条件分页获取奖品列表即总数
-            AwardExecution ae = awardService.getAwawrdList(awardCondition, pageIndex, pageSize);
+            AwardExecution ae = awardService.getAwardList(awardCondition, pageIndex, pageSize);
             modelMap.put("success", true);
             modelMap.put("awardList", ae.getAwardList());
             modelMap.put("count", ae.getCount());
