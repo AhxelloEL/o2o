@@ -20,26 +20,26 @@
 
     <select id="productSellDailyList" resultMap="productSellDailyResultMap">
         SELECT
-	        psd.create_time,
-	        psd.total,
-	        p.product_id,
-	        p.product_name,
-	        s.shop_id,
-	        s.shop_name
+        psd.create_time,
+        psd.total,
+        p.product_id,
+        p.product_name,
+        s.shop_id,
+        s.shop_name
         FROM
-	        tb_product_sell_daily psd,
-	        tb_product p,
-	        tb_shop s
+        tb_product_sell_daily psd,
+        tb_product p,
+        tb_shop s
         <where>
-	        psd.shop_id = s.shop_id
-	        AND psd.product_id = p.product_id
+            psd.shop_id = s.shop_id
+            AND psd.product_id = p.product_id
             <if test="productSellDailyCondition.product != null and productSellDailyCondition.product.productName != null">
                 AND p.product_name LIKE '%${productSellDailyCondition.product.productName}%'
             </if>
-	        <if test="productSellDailyCondition.shop != null and productSellDailyCondition.shop.shopId != null">
+            <if test="productSellDailyCondition.shop != null and productSellDailyCondition.shop.shopId != null">
                 AND psd.shop_id = #{productSellDailyCondition.shop.shopId}
             </if>
-	        /*AND psd.create_time >= "2021-08-23 14:55:23"*/
+            /*AND psd.create_time >= "2021-08-23 14:55:23"*/
             <if test="beginTime!=null and endTime!=null">
                 and date_format(psd.create_time,'%Y-%m-%d') between
                 date_format(#{beginTime},'%Y-%m-%d') and
@@ -55,7 +55,7 @@
             </if>
         </where>
         ORDER BY
-	        psd.create_time,psd.product_id
+        psd.create_time,psd.product_id
     </select>
 
     <insert id="insertProductSellDaily" parameterType="com.al.o2o.entity.ProductSellDaily">
