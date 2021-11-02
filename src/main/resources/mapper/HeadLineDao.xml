@@ -15,7 +15,7 @@
         FROM
         tb_head_line
         <where>
-            <if test= "headLineCondition.enableStatus != null">
+            <if test="headLineCondition.enableStatus != null">
                 and enable_status = #{headLineCondition.enableStatus}
             </if>
         </where>
@@ -46,4 +46,20 @@
         (#{lineName},#{lineLink},#{lineImg},#{priority},
         #{createTime},#{lastEditTime})
     </insert>
+
+    <delete id="deleteHeadLine">
+        DELETE FROM
+        tb_head_line
+        WHERE
+        line_id = #{lineId}
+    </delete>
+
+    <delete id="batchDeleteHeadLine" parameterType="long">
+        DELETE FROM
+        tb_head_line
+        WHERE line_id IN
+        <foreach collection="list" item="headLineId" open="(" separator="," close=")">
+            #{lineId}
+        </foreach>
+    </delete>
 </mapper>
