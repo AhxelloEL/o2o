@@ -31,20 +31,20 @@
         tb_person_info buyer,
         tb_shop s
         <where>
-            tb_user_shop_map.shop_id = s.shop_id
+            usm.user_id = buyer.user_id
             and
-            tb_user_shop_map.user_id = buyer.user_id
+            usm.shop_id = s.shop_id
             <if test="userShopCondition.user != null and userShopCondition.user.userId != null">
-                usm.user_id = #{userShopCondition.user.userId}
+                and usm.user_id = #{userShopCondition.user.userId}
             </if>
             <if test="userShopCondition.shop != null and userShopCondition.shop.shopId != null">
-                and usm.shop_id = #{userShopCondition.user.userId}
+                and usm.shop_id = #{userShopCondition.shop.shopId}
             </if>
-            <if test="userShopCondition.user != null and userShopCondition.userName != null">
-                and buyer.name like `%${userShopCondition.user.userName}%`
+            <if test="userShopCondition.user != null and userShopCondition.user.name != null">
+                and buyer.name like '%${userShopCondition.user.name}%'
             </if>
             <if test="userShopCondition.shop != null and userShopCondition.shop.shopName != null">
-                and s.shop_name like `%${userShopCondition.shop.shopName}%`
+                and s.shop_name like '%${userShopCondition.shop.shopName}%'
             </if>
             <if test="userShopCondition.createTime != null">
                 and usm.create_time > #{userShopCondition.createTime}
@@ -60,20 +60,20 @@
         tb_person_info buyer,
         tb_shop s
         <where>
-            tb_user_shop_map.shop_id = s.shop_id
+            usm.shop_id = s.shop_id
             and
-            tb_user_shop_map.user_id = buyer.user_id
+            usm.user_id = buyer.user_id
             <if test="userShopCondition.user != null and userShopCondition.user.userId != null">
-                usm.user_id = #{userShopCondition.user.userId}
+                and usm.user_id = #{userShopCondition.user.userId}
             </if>
             <if test="userShopCondition.shop != null and userShopCondition.shop.shopId != null">
-                and usm.shop_id = #{userShopCondition.user.userId}
+                and usm.shop_id = #{userShopCondition.shop.shopId}
             </if>
-            <if test="userShopCondition.user != null and userShopCondition.userName != null">
-                and buyer.name like `%${userShopCondition.user.userName}%`
+            <if test="userShopCondition.user != null and userShopCondition.user.name != null">
+                and buyer.name like '%${userShopCondition.user.name}%'
             </if>
             <if test="userShopCondition.shop != null and userShopCondition.shop.shopName != null">
-                and s.shop_name like `%${userShopCondition.shop.shopName}%`
+                and s.shop_name like '%${userShopCondition.shop.shopName}%'
             </if>
             <if test="userShopCondition.createTime != null">
                 and usm.create_time > #{userShopCondition.createTime}

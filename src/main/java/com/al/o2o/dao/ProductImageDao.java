@@ -14,6 +14,7 @@ import java.util.List;
 public interface ProductImageDao {
     /**
      * 根据商品ID显示该商品的预览图
+     *
      * @param productId 商品ID
      * @return 返回该商品的所有详情图片
      */
@@ -21,6 +22,7 @@ public interface ProductImageDao {
 
     /**
      * 批量添加详情图片
+     *
      * @param productImgList 商品图片列表
      * @return 返回受影响行数
      */
@@ -28,6 +30,7 @@ public interface ProductImageDao {
 
     /**
      * 清空预览图
+     *
      * @param productId
      * @return 返回0：清空失败 1：清空成功
      */

@@ -16,22 +16,25 @@ import java.util.List;
 public interface ProductSellDailyDao {
     /**
      * 根据商品查询条件返回商品销量的统计表
+     *
      * @param productSellDailyCondition
      * @param beginTime
-     * @param editTime
+     * @param endTime
      * @return
      */
-    List<ProductSellDaily> productSellDailyList(@Param("productSellDailyCondition")ProductSellDaily productSellDailyCondition,
-                                                @Param("beginTime") Date beginTime, @Param("editTime")Date editTime);
+    List<ProductSellDaily> productSellDailyList(@Param("productSellDailyCondition") ProductSellDaily productSellDailyCondition,
+                                                @Param("beginTime") Date beginTime, @Param("endTime") Date endTime);
 
     /**
      * 统计平台所以商品的日销售量
+     *
      * @return
      */
     int insertProductSellDaily();
 
     /**
      * 统计平台当天没销量的商品，补全信息，置为0
+     *
      * @return
      */
     int insertDefaultProductSellDaily();

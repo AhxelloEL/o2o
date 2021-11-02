@@ -2,6 +2,13 @@ package com.al.o2o.entity;
 
 import java.util.Date;
 
+/**
+ * @author Xiahuicheng
+ * @PackageName:com.al.o2o.entity
+ * @ClassName:LocalAuth
+ * @Description 本地账号关联
+ * @date2021/6/2 9:21
+ */
 public class LocalAuth {
     /**
      * 本地ID

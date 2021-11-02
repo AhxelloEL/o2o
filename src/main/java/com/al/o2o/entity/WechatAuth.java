@@ -2,6 +2,12 @@ package com.al.o2o.entity;
 
 import java.util.Date;
 
+/**
+ * @author Xiahuicheng
+ * @PackageName:com.al.o2o.entity
+ * @ClassName:WechatAuth
+ * @Description 微信账号关联实体类
+ */
 public class WechatAuth {
     /**
      * WechatId

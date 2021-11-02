@@ -3,8 +3,11 @@ package com.al.o2o.entity;
 import java.util.Date;
 
 /**
- * 用户实体类
- * @author yunSun
+ * @author Xiahuicheng
+ * @PackageName:com.al.o2o.entity
+ * @ClassName:PersonInfo
+ * @Description 用户实体类
+ * @date2021/6/23 12:06
  */
 public class PersonInfo {
     /**

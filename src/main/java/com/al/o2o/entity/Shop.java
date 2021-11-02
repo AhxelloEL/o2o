@@ -3,7 +3,10 @@ package com.al.o2o.entity;
 import java.util.Date;
 
 /**
- * @author yunSun
+ * @author Xiahuicheng
+ * @PackageName:com.al.o2o.entity
+ * @ClassName:Shop
+ * @Description 商家店铺实体类
  */
 public class Shop {
     /**

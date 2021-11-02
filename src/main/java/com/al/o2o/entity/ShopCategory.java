@@ -4,11 +4,13 @@ import java.util.Date;
 
 /**
  * @author Xiahuicheng
- * 店铺类型
+ * @PackageName:com.al.o2o.entity
+ * @ClassName:ShopCategory
+ * @Description 店铺类型实体类
  */
 public class ShopCategory {
     /**
-     *  店铺类型ID
+     * 店铺类型ID
      */
     private Long shopCategoryId;
     /**

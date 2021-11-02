@@ -2,9 +2,15 @@ package com.al.o2o.entity;
 
 import java.util.Date;
 
+/**
+ * @author Xiahuicheng
+ * @PackageName:com.al.o2o.entity
+ * @ClassName:ProductCategory
+ * @Description 商品类型实体类
+ */
 public class ProductCategory {
     /**
-     *  商品类型Id
+     * 商品类型Id
      */
     private Long productCategoryId;
     /**

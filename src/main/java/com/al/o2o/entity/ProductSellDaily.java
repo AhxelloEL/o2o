@@ -10,10 +10,25 @@ import java.util.Date;
  * @date2021/8/24 11:13
  */
 public class ProductSellDaily {
+    /**
+     * 主键Id
+     */
     private Integer productSellDailyId;
+    /**
+     * 哪天的销量，精确到天
+     */
     private Date createTime;
+    /**
+     * 销量
+     */
     private Integer total;
+    /**
+     * 关联商品信息
+     */
     private Product product;
+    /**
+     * 关联店铺信息
+     */
     private Shop shop;
 
     public Integer getProductSellDailyId() {

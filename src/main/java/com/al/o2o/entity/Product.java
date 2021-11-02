@@ -4,7 +4,11 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author yunSun
+ * @author Xiahuicheng
+ * @PackageName:com.al.o2o.entity
+ * @ClassName:Product
+ * @Description 商品实体类
+ * @date2021/6/23 12:07
  */
 public class Product {
     /**
