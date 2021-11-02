@@ -15,11 +15,11 @@ public class ProductSellDaily {
      */
     private Integer productSellDailyId;
     /**
-     * 创建时间
+     * 哪天的销量，精确到天
      */
     private Date createTime;
     /**
-     * 消费商品数量
+     * 销量
      */
     private Integer total;
     /**
